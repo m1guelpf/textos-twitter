@@ -30,6 +30,14 @@ struct FeedItem: View {
 				.foregroundStyle(.primary)
 				.bold()
 
+			if let image = post.image {
+				Image(image)
+					.resizable()
+					.scaledToFit()
+					.dither(grayscale: true)
+					.clipShape(RoundedRectangle(cornerRadius: 25))
+			}
+
 			HStack {
 				Text("@\(post.username)") + Text(" – ") + Text(timeSincePublished)
 			}.foregroundStyle(.secondary)
@@ -38,6 +46,20 @@ struct FeedItem: View {
 }
 
 #Preview {
-	FeedItem(post: Post(text: "just setting up my twttr", username: "jack", dateString: Date().ISO8601Format()))
-		.previewLayout(.sizeThatFits)
+	FeedItem(post: Post(
+		text: "just setting up my twttr",
+		username: "jack",
+		date: Date()
+	))
+	.previewLayout(.sizeThatFits)
+}
+
+#Preview("Image") {
+	FeedItem(post: Post(
+		text: "Meet my concept. I think Browse for Me could work beautifully on the Apple Watch. What do you think?",
+		username: "iamnalimov",
+		image: "arc-on-watch",
+		dateString: "2024-02-28T18:53:08.000Z"
+	))
+	.previewLayout(.sizeThatFits)
 }

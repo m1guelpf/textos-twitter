@@ -20,6 +20,9 @@
 		C0800B0C2B8FB9B80039C98A /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0800B0B2B8FB9B80039C98A /* FeedView.swift */; };
 		C0800B0E2B8FBA550039C98A /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0800B0D2B8FBA550039C98A /* FeedItem.swift */; };
 		C0800B102B8FD7720039C98A /* ProgressAwareScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0800B0F2B8FD7720039C98A /* ProgressAwareScrollView.swift */; };
+		C0A8A91B2B903C55005E8448 /* Dithering.metal in Sources */ = {isa = PBXBuildFile; fileRef = C0A8A91A2B903C55005E8448 /* Dithering.metal */; };
+		C0A8A91F2B903E12005E8448 /* View+Dither.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A8A91E2B903E12005E8448 /* View+Dither.swift */; };
+		C0A8A9222B90454A005E8448 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A8A9212B90454A005E8448 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,9 @@
 		C0800B0B2B8FB9B80039C98A /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		C0800B0D2B8FBA550039C98A /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		C0800B0F2B8FD7720039C98A /* ProgressAwareScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressAwareScrollView.swift; sourceTree = "<group>"; };
+		C0A8A91A2B903C55005E8448 /* Dithering.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Dithering.metal; sourceTree = "<group>"; };
+		C0A8A91E2B903E12005E8448 /* View+Dither.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Dither.swift"; sourceTree = "<group>"; };
+		C0A8A9212B90454A005E8448 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,9 +75,11 @@
 		C0800AEA2B8F8D4C0039C98A /* TextPost */ = {
 			isa = PBXGroup;
 			children = (
+				C0A8A9202B904541005E8448 /* Models */,
 				C0800AEB2B8F8D4C0039C98A /* TextPostApp.swift */,
 				C0800AEF2B8F8D4C0039C98A /* Assets.xcassets */,
 				C0800AF12B8F8D4C0039C98A /* Preview Content */,
+				C0A8A9192B903C47005E8448 /* Shaders */,
 				C0800AF92B8F8DA10039C98A /* Views */,
 			);
 			path = TextPost;
@@ -102,6 +110,7 @@
 				C0800AFA2B8F8DBF0039C98A /* TabBar.swift */,
 				C0800AFD2B8F8F320039C98A /* FlatButtonStyle.swift */,
 				C0800B0F2B8FD7720039C98A /* ProgressAwareScrollView.swift */,
+				C0A8A91E2B903E12005E8448 /* View+Dither.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -124,6 +133,22 @@
 				C0800B0D2B8FBA550039C98A /* FeedItem.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		C0A8A9192B903C47005E8448 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				C0A8A91A2B903C55005E8448 /* Dithering.metal */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		C0A8A9202B904541005E8448 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C0A8A9212B90454A005E8448 /* Post.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,8 +223,10 @@
 			files = (
 				C0800B102B8FD7720039C98A /* ProgressAwareScrollView.swift in Sources */,
 				C0800AFE2B8F8F320039C98A /* FlatButtonStyle.swift in Sources */,
+				C0A8A91B2B903C55005E8448 /* Dithering.metal in Sources */,
 				C0800B0C2B8FB9B80039C98A /* FeedView.swift in Sources */,
 				C0800AFB2B8F8DBF0039C98A /* TabBar.swift in Sources */,
+				C0A8A9222B90454A005E8448 /* Post.swift in Sources */,
 				C0800AEE2B8F8D4C0039C98A /* ContentView.swift in Sources */,
 				C0800B032B8FA6AE0039C98A /* HomeView.swift in Sources */,
 				C0800B072B8FA6D40039C98A /* ChatView.swift in Sources */,
@@ -207,6 +234,7 @@
 				C0800B052B8FA6C50039C98A /* ProfileView.swift in Sources */,
 				C0800B0E2B8FBA550039C98A /* FeedItem.swift in Sources */,
 				C0800AEC2B8F8D4C0039C98A /* TextPostApp.swift in Sources */,
+				C0A8A91F2B903E12005E8448 /* View+Dither.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
