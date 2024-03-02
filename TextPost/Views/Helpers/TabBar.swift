@@ -7,15 +7,17 @@ struct TabBar<Tab, Content>: View where
 	Tab: Hashable & CaseIterable & RawRepresentable
 {
 	@Binding var selectedTab: Tab
+	var showTabs: Bool = true
 	let extraContent: Content
 
-	init(selectedTab: Binding<Tab>, @ViewBuilder extraContent: () -> Content) {
+	init(selectedTab: Binding<Tab>, showTabs: Bool = true, @ViewBuilder extraContent: () -> Content) {
+		self.showTabs = showTabs
 		_selectedTab = selectedTab
 		self.extraContent = extraContent()
 	}
 
-	init(selectedTab: Binding<Tab>) where Content == EmptyView {
-		self.init(selectedTab: selectedTab) {
+	init(selectedTab: Binding<Tab>, showTabs: Bool = true) where Content == EmptyView {
+		self.init(selectedTab: selectedTab, showTabs: showTabs) {
 			EmptyView()
 		}
 	}
@@ -59,6 +61,7 @@ struct TabBar<Tab, Content>: View where
 			.scrollTargetBehavior(.viewAligned)
 			.scrollPosition(id: scrollBinding)
 			.safeAreaPadding(.horizontal)
+			.opacity(showTabs ? 1 : 0)
 
 			Spacer()
 		}.overlay {

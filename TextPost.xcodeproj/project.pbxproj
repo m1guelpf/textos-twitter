@@ -75,9 +75,9 @@
 		C0800AEA2B8F8D4C0039C98A /* TextPost */ = {
 			isa = PBXGroup;
 			children = (
-				C0A8A9202B904541005E8448 /* Models */,
 				C0800AEB2B8F8D4C0039C98A /* TextPostApp.swift */,
 				C0800AEF2B8F8D4C0039C98A /* Assets.xcassets */,
+				C0A8A9202B904541005E8448 /* Models */,
 				C0800AF12B8F8D4C0039C98A /* Preview Content */,
 				C0A8A9192B903C47005E8448 /* Shaders */,
 				C0800AF92B8F8DA10039C98A /* Views */,
@@ -368,7 +368,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TextPost/Preview Content\"";
-				DEVELOPMENT_TEAM = LR4RJT6586;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -397,7 +397,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TextPost/Preview Content\"";
-				DEVELOPMENT_TEAM = LR4RJT6586;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

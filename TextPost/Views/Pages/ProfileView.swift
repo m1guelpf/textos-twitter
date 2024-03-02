@@ -6,7 +6,6 @@ struct ProfileView: View {
 			Text("Profile")
 		}
 		.frame(maxWidth: .infinity, maxHeight: .infinity)
-		.background(.blue)
 	}
 }
 

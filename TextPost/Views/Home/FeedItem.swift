@@ -4,6 +4,8 @@ struct FeedItem: View {
 	var post: Post
 	var expanded: Bool = false
 
+	@State private var showingImageDetail: Bool = false
+
 	var text: String {
 		if expanded { return post.text }
 
@@ -34,8 +36,11 @@ struct FeedItem: View {
 				Image(image)
 					.resizable()
 					.scaledToFit()
-					.dither(grayscale: true)
+					.dither(isEnabled: !expanded && !showingImageDetail, grayscale: true)
 					.clipShape(RoundedRectangle(cornerRadius: 25))
+					.onTapGesture {
+						showingImageDetail.toggle()
+					}
 			}
 
 			HStack {

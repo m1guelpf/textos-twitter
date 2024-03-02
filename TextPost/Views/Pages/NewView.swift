@@ -6,7 +6,6 @@ struct NewView: View {
 			Text("New")
 		}
 		.frame(maxWidth: .infinity, maxHeight: .infinity)
-		.background(.teal)
 	}
 }
 

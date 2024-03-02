@@ -3,14 +3,26 @@ import SwiftUI
 
 struct FeedView: View {
 	var feedType: FeedType
+	@Environment(\.colorScheme) var colorScheme
 
 	@State private var progress = CGFloat.zero
+
+	var shadowColor: Color {
+		colorScheme == .dark ? .black : .white
+	}
 
 	var body: some View {
 		ProgressAwareScrollView(progress: $progress) {
 			LazyVStack(spacing: 35) {
 				ForEach(posts) { post in
-					NavigationLink(destination: FeedItem(post: post, expanded: true)) {
+					NavigationLink {
+						VStack(alignment: .leading) {
+							FeedItem(post: post, expanded: true)
+
+							Spacer()
+						}
+						.padding()
+					} label: {
 						FeedItem(post: post)
 					}.buttonStyle(.plain)
 				}
@@ -19,15 +31,15 @@ struct FeedView: View {
 		.overlay {
 			VStack {
 				Rectangle()
-					.fill(.linearGradient(colors: [.black.opacity(0), .black.opacity(0.5), .black], startPoint: .bottom, endPoint: .top))
-					.opacity(progress > 0.1 ? 1 : 0)
-					.animation(.default, value: progress)
+					.fill(.linearGradient(colors: [shadowColor.opacity(0), shadowColor.opacity(0.5), shadowColor], startPoint: .bottom, endPoint: .top))
+					.opacity(progress > 0 ? 1 : 0)
+					.animation(.easeInOut, value: progress)
 					.frame(height: 50)
 
 				Spacer()
 
 				Rectangle()
-					.fill(.linearGradient(colors: [.black.opacity(0), .black.opacity(0.5), .black], startPoint: .top, endPoint: .bottom))
+					.fill(.linearGradient(colors: [shadowColor.opacity(0), shadowColor.opacity(0.5), shadowColor], startPoint: .top, endPoint: .bottom))
 					.opacity(progress < 0.95 ? 1 : 0)
 					.animation(.default, value: progress)
 					.frame(height: 50)

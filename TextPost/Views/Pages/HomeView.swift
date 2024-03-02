@@ -14,7 +14,7 @@ struct HomeView: View {
 				Button(action: {}) {
 					Text("search")
 				}.foregroundStyle(.secondary)
-			}
+			}.padding(.vertical, 10)
 
 			TabView(selection: $selectedFeed) {
 				FeedView(feedType: .forYou)
@@ -29,5 +29,7 @@ struct HomeView: View {
 }
 
 #Preview {
-	HomeView()
+	NavigationStack {
+		HomeView()
+	}
 }
